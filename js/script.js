@@ -9,6 +9,11 @@
 // il todo viene rimosso dalla lista.
 
 
+// MILESTONE 3
+// Predisporre un campo di input testuale (sempre visibile) e un pulsante “aggiungi”: 
+// cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, 
+// che quindi viene aggiunto alla lista dei todo esistenti
+
 const todos = [
     {
         text: "Fare la spesa",
@@ -35,17 +40,33 @@ const todos = [
 // console.log(todos);
 
 const appVue = new Vue ({
+
     el: "#app",
 
     data: {
         listTodo: todos,
+        addTextTodo: "",
     },
+
     methods: {
         deleteTodo(index) {
             this.listTodo.splice(index, 1);
+        },
+
+        addTodo() {
+
+            if(this.addTextTodo === "") {
+                return
+            }
+
+            this.listTodo.push({
+                text: this.addTextTodo,
+                done: false,
+            })
+
+            this.addTextTodo = ""
         }
     }
-
 });
 
 
