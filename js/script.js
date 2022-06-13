@@ -3,26 +3,32 @@
 // Stampare all’interno di una lista, un item per ogni todo.
 // Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
 
+// MILESTONE 2
+// Visualizzare a fianco ad ogni item una “x”: 
+// cliccando su di essa, senza chiedere all’utente conferma, 
+// il todo viene rimosso dalla lista.
+
+
 const todos = [
     {
         text: "Fare la spesa",
-        done: "true"
+        done: true
     },
     {
         text: "Fare i compiti",
-        done: "false"
+        done: false
     },
     {
         text: "Fare una passeggiata",
-        done: "false"
+        done: false
     },
     {
         text: "Andare al mare",
-        done: "true",
+        done: true,
     },
     {
         text: "Cucinare",
-        done: "true"
+        done: true
     },
 ];
 
@@ -34,5 +40,12 @@ const appVue = new Vue ({
     data: {
         listTodo: todos,
     },
+    methods: {
+        deleteTodo(index) {
+            this.listTodo.splice(index, 1);
+        }
+    }
 
 });
+
+
