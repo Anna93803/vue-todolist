@@ -1,6 +1,3 @@
-// Questa volta però ogni todo sarà un oggetto, formato da due proprietà:
-// - text, una stringa che indica il testo del todo
-// - done, un booleano (true/false) che indica se il todo è stato fatto oppure no
 
 // MILESTONE 1
 // Stampare all’interno di una lista, un item per ogni todo.
@@ -25,7 +22,7 @@ const todos = [
     },
     {
         text: "Cucinare",
-        done: "True"
+        done: "true"
     },
 ];
 
@@ -36,5 +33,6 @@ const appVue = new Vue ({
 
     data: {
         listTodo: todos,
-    }
+    },
+
 });

@@ -21,9 +21,25 @@
                         <div class="card-body">
                             <h5 class="card-title text-center fs-1 pb-3">TodoList</h5>
                         </div>
+
                         <ul>
-                            <li v-for="(todo, i) in listTodo" class="fs-3">{{listTodo[i].text}}</li>
+                            <li v-for="(todo, i) in listTodo" class="fs-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"  value="" :id="'flexCheckDefault' + 'i'" v-model="todo.done">
+                                    <label 
+                                        class="form-check-label" 
+                                        :for="'flexCheckDefault' + 'i'" 
+                                        :class="{'text-decoration-line-through' : 'todo.done',
+                                        'text-secondary' : todo.done  }">{{listTodo[i].text}}
+                                    </label>
+                                </div>
+                            </li>
                         </ul>
+                        <!-- <ul>
+                            <li v-for="(todo, i) in listTodo" class="fs-3"
+                            :class="{'text-decoration-line-through' : todo.done,
+                                    'text-secondary' : todo.done}">{{listTodo[i].text}}</li>
+                        </ul> -->
                     </div>
                 </div>
             </div>

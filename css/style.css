@@ -16,3 +16,7 @@ body {
 .card-title {
     border-bottom: 1px solid fuchsia;
 }
+
+li {
+    list-style: none;
+}
